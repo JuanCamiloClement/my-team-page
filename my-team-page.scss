@@ -1,0 +1,66 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    //border: solid black 1px;
+    margin: 1px;
+    padding: 1px;
+}
+
+div.p {
+    text-align: left;
+}
+
+@mixin display ($direction: row,$content: center) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+    justify-content: $content;
+    align-items: center;
+    //margin: 5px;
+    //padding: 5px;
+}
+
+.container-general {
+    @include display;
+    margin-top: 5vh;
+}
+
+.container-general__for-text {
+    @include display($direction: flex-start,$content: space-evenly);
+    width: 100%;
+}
+
+.container-general__header {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.container-general__who-we-are {
+    width: 375px;
+    font-size: 14px;
+}
+
+.container-general__for-people {
+    @include display($content: space-evenly);
+    font-size: 10px;
+}
+
+.container-general__person {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 3px;
+    padding: 2px;
+}
+
+img {
+    width: 30vw;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.role {
+    @include display;
+    box-sizing: content-box;
+    writing-mode: vertical-rl;
+}
