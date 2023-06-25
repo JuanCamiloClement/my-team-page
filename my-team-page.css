@@ -1,11 +1,12 @@
 * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   font-family: "Poppins", sans-serif;
-  margin: 1px;
-  padding: 1px;
 }
 
-div.p {
-  text-align: left;
+html {
+  all: unset;
 }
 
 .container-general {
@@ -14,26 +15,32 @@ div.p {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 5vh;
+  margin: 10vh 5vh;
 }
 
 .container-general__for-text {
   display: flex;
-  flex-direction: flex-start;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+  max-width: 600px;
 }
 
 .container-general__header {
-  font-size: 18px;
-  font-weight: bold;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .container-general__who-we-are {
   width: 375px;
-  font-size: 14px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+
+h2 {
+  padding-bottom: 15px;
 }
 
 .container-general__for-people {
@@ -42,32 +49,90 @@ div.p {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  font-size: 10px;
+  max-width: 600px;
 }
 
 .container-general__person {
   display: flex;
   flex-wrap: nowrap;
-  margin: 3px;
-  padding: 2px;
+  margin: 1vh 1vw;
+  padding: 1vh 1vw;
+  cursor: pointer;
+}
+
+.container-general__person:hover {
+  color: blue;
 }
 
 img {
-  width: 30vw;
+  max-width: 110px;
 }
 
-.name {
-  font-weight: bold;
+.container-general__person--image-down {
+  margin-top: 15vh;
+}
+
+.img-name {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .role {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  box-sizing: content-box;
   writing-mode: vertical-rl;
+}
+
+@media (min-width: 768px) {
+  .container-general {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-general__for-text {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 800px;
+  }
+  .container-general__for-people {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 600px;
+  }
+}
+@media (min-width: 1444px) {
+  .container-general {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-general__for-text {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 100%;
+  }
+  .container-general__for-people {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 100%;
+  }
 }
 
 /*# sourceMappingURL=my-team-page.css.map */

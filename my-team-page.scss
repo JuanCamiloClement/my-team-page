@@ -1,66 +1,113 @@
 * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
-    //border: solid black 1px;
-    margin: 1px;
-    padding: 1px;
 }
 
-div.p {
-    text-align: left;
-}
+$title-size: 18px;
+$text-size: 14px;
+$color: black;
 
-@mixin display ($direction: row,$content: center) {
+@mixin display ($direction: row,$content: center,$cross: center) {
     display: flex;
     flex-direction: $direction;
     flex-wrap: wrap;
     justify-content: $content;
-    align-items: center;
-    //margin: 5px;
-    //padding: 5px;
+    align-items: $cross;
+}
+
+html {
+    all: unset;
 }
 
 .container-general {
     @include display;
-    margin-top: 5vh;
+    margin: 10vh 5vh; 
 }
 
 .container-general__for-text {
-    @include display($direction: flex-start,$content: space-evenly);
+    @include display($content: space-evenly);
     width: 100%;
+    max-width: 600px; //have to increase max width for desktop
 }
 
 .container-general__header {
-    font-size: 18px;
-    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .container-general__who-we-are {
     width: 375px;
-    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+h2 {
+    padding-bottom: 15px;
 }
 
 .container-general__for-people {
-    @include display($content: space-evenly);
-    font-size: 10px;
+    @include display ($content: space-evenly);
+    max-width: 600px;
 }
 
 .container-general__person {
     display: flex;
     flex-wrap: nowrap;
-    margin: 3px;
-    padding: 2px;
+    margin: 1vh 1vw;
+    padding: 1vh 1vw;
+    cursor: pointer;
+}
+
+.container-general__person:hover {
+    color: blue;
 }
 
 img {
-    width: 30vw;
+    max-width: 110px;
 }
 
-.name {
-    font-weight: bold;
+.container-general__person--image-down {
+    margin-top: 15vh;
+}
+
+.img-name {
+    @include display($direction: column,$content: flex-start,$cross:flex-start);
 }
 
 .role {
-    @include display;
-    box-sizing: content-box;
     writing-mode: vertical-rl;
+}
+
+@media (min-width: 768px) {
+    .container-general {
+        @include display;
+    }
+
+    .container-general__for-text {
+        @include display ($content: space-evenly);
+        max-width: 800px;
+    }
+
+    .container-general__for-people {
+        @include display ($content: space-evenly);
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1444px) {
+    .container-general {
+        @include display;
+    }
+
+    .container-general__for-text {
+        @include display ($content: space-evenly);
+        max-width: 100%;
+    }
+
+    .container-general__for-people {
+        @include display ($content: space-evenly);
+        max-width: 100%;
+    }
 }
